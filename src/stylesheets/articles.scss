@@ -1,0 +1,93 @@
+.slider {
+  width: 98vw;
+  height: 50vw;
+  max-height: 450px;
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 2.5rem;
+        text-decoration: none;
+        color: white;
+        border-radius: 1rem;
+        gap: 1.6rem;
+
+        .slideHeader {
+          font-size: 2rem;
+          font-weight: 600;
+          text-align: center;
+        }
+        .slideTags {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+
+          .slideTag {
+            padding: 0.6rem 1rem;
+            border: 1px solid white;
+            border-radius: 10px;
+          }
+        }
+        &.firstSlide {
+          background: rgb(2, 0, 36);
+          background: linear-gradient(
+            90deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(9, 9, 121, 1) 35%,
+            rgba(0, 212, 255, 1) 100%
+          );
+        }
+        &.secondSlide {
+          background: rgb(34, 193, 195);
+          background: linear-gradient(
+            0deg,
+            rgba(34, 193, 195, 1) 0%,
+            rgba(253, 187, 45, 1) 100%
+          );
+        }
+        &.thirdSlide {
+          background: rgb(238, 174, 202);
+          background: radial-gradient(
+            circle,
+            rgba(238, 174, 202, 1) 0%,
+            rgba(148, 187, 233, 1) 100%
+          );
+        }
+      }
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      color: white;
+      //   content: '';
+    }
+    // .swiper-button-next {
+    //   background-image: url('https://img.icons8.com/?size=100&id=BQZhpHpqdJyY&format=png&color=000000');
+    // }
+    // .swiper-button-prev {
+    //   background-image: url('https://img.icons8.com/?size=100&id=HgRhaL4CC3N0&format=png&color=000000');
+    // }
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .swiper-pagination-bullet {
+      width: 0.6rem;
+      height: 0.6rem;
+
+      &.swiper-pagination-bullet-active {
+        background-color: white;
+      }
+    }
+  }
+}
