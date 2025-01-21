@@ -1,0 +1,18 @@
+body {
+  background-color: #1e1e1e;
+}
+.A_ADCUser {
+  display: flex;
+  height: auto;
+
+  &::before {
+    width: 28px;
+    height: 28px;
+    background-image: url('../images/dictionary/Q_ADCSymbol.svg');
+  }
+  &::after {
+    width: 36px;
+    height: 24px;
+    background-image: url('../images/dictionary/Q_ADCUserTexting.svg');
+  }
+}
