@@ -1,0 +1,15 @@
+.S_Stories {
+  /*
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  */
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 12px;
+  align-content: center;
+  max-width: 984px;
+  margin: 0 auto;
+}

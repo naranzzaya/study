@@ -9,4 +9,8 @@ body {
 
 body {
   font-family: 'PT Root UI', sans-serif;
+
+  &.dictionary {
+    background-color: #1e1e1e;
+  }
 }
