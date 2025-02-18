@@ -15,7 +15,8 @@ module.exports = {
     swiper: './src/javascripts/swiper.js',
     dictionary: './src/dictionary/dictionary.js',
     jsBasic: './src/js-basic/js-basic.js',
-    tests: './src/tests/test1.js'
+    tests: './src/tests/test1.js',
+    functions: './src/javascripts/functions.js'
   },
   output: {
     filename: '[name].[contenthash].js',
@@ -146,6 +147,13 @@ module.exports = {
       template: './src/js-basic/js-basic.html',
       filename: './js-basic/js-basic.html',
       chunks: ['jsBasic']
+    }),
+
+    // functions
+    new HtmlWebpackPlugin({
+      template: './src/functions.html',
+      filename: './functions.html',
+      chunks: ['index', 'functions']
     }),
 
     // Тесты
