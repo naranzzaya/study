@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Статьи</title>
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <p><a href="/">На главную</a></p>
-
+    <nav>
+      <a href="/">На главную</a>
+      <a href="articles/about-games.html">О настолках</a>
+    </nav>
     <h1>Статьи</h1>
-    <p><a href="articles/about-games.html">О настолках</a></p>
 
     <div class="slider">
       <!-- Slider main container -->
@@ -26,36 +29,34 @@
           <div class="swiper-slide">
             <a href="articles/about-games.html" class="firstSlide">
               <div class="slideTags">
-                <p class="slideTag">База</p>
-                <p class="slideTag">Для начинающих</p>
+                <p class="slideTag">база</p>
+                <p class="slideTag">для начинающих</p>
               </div>
-              <h3 class="slideHeader">
+              <h3 class="A_ArticleCardHeader" class="slideHeader">
                 Как устроены настольные игры: ключевые механики, элементы и
                 сеттинг
               </h3>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="secondSlide">
+            <a href="articles/about-games.html" class="secondSlide">
               <div class="slideTags">
-                <p class="slideTag">База</p>
-                <p class="slideTag">Для начинающих</p>
+                <p class="slideTag">практика</p>
+                <p class="slideTag">для начинающих</p>
               </div>
-              <h3 class="slideHeader">
-                Как устроены настольные игры: ключевые механики, элементы и
-                сеттинг
+              <h3 class="A_ArticleCardHeader" class="slideHeader">
+                Топ-10 настолок для больших компаний
               </h3>
             </a>
           </div>
           <div class="swiper-slide">
-            <a href="" class="thirdSlide">
+            <a href="articles/about-games.html" class="thirdSlide">
               <div class="slideTags">
-                <p class="slideTag">База</p>
-                <p class="slideTag">Для начинающих</p>
+                <p class="slideTag">база</p>
+                <p class="slideTag">для продвинутых</p>
               </div>
-              <h3 class="slideHeader">
-                Как устроены настольные игры: ключевые механики, элементы и
-                сеттинг
+              <h3 class="A_ArticleCardHeader" class="slideHeader">
+                Как прописать баланс для настольной игры?
               </h3>
             </a>
           </div>
@@ -64,8 +65,8 @@
         <div class="swiper-pagination"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
 
         <!-- If we need scrollbar -->
         <!-- <div class="swiper-scrollbar"></div> -->
@@ -74,6 +75,7 @@
 
     <div class="S_Articles">
       <h2 class="A_ArticleHeader">Статьи</h2>
+
       <div class="M_FilterTags">
         <div class="A_FilterTag all active">все</div>
         <div class="A_FilterTag year2025">2025</div>
@@ -84,20 +86,52 @@
       </div>
 
       <div class="C_ArticleCards">
-        <a href="articles/about-games.html" class="O_ArticleCard">
-          <!-- <h3>
-            Как устроены настольные игры: ключевые механики, элементы и сеттинг.
-          </h3> -->
-          2025 2024
+        <a
+          href="articles/about-games.html"
+          class="O_ArticleCard all year2025 year2024"
+        >
+          <div class="A_ArticleCardImage"></div>
+          <h3 class="A_ArticleCardHeader">2025 2024</h3>
+          <p>Description</p>
         </a>
-        <a href="" class="O_ArticleCard all year2025">2025</a>
-        <a href="" class="O_ArticleCard all year2024">2024</a>
-        <a href="" class="O_ArticleCard all year2023">2023</a>
-        <a href="" class="O_ArticleCard all year2022">2022</a>
-        <a href="" class="O_ArticleCard all year2021">2021</a>
-        <a href="" class="O_ArticleCard all year2023 year2021">2023 2021</a>
+        <a href="" class="O_ArticleCard all year2025">
+          <div class="A_ArticleCardImage"></div>
+          <h3 class="A_ArticleCardHeader">2025</h3>
+          <p>Description</p></a
+        >
+        <a href="" class="O_ArticleCard all year2024">
+          <div class="A_ArticleCardImage"></div>
+          <h3 class="A_ArticleCardHeader">2024</h3>
+          <p>Description</p></a
+        >
+        <a href="" class="O_ArticleCard all year2023">
+          <div class="A_ArticleCardImage"></div>
+          <h3 class="A_ArticleCardHeader">2023</h3>
+          <p>Description</p></a
+        >
+        <a href="" class="O_ArticleCard all year2022">
+          <div class="A_ArticleCardImage"></div>
+          <h3 class="A_ArticleCardHeader">2022</h3>
+          <p>Description</p></a
+        >
+        <a href="" class="O_ArticleCard all year2021">
+          <div class="A_ArticleCardImage"></div>
+          <h3 class="A_ArticleCardHeader">2021</h3>
+          <p>Description</p></a
+        >
+        <a href="" class="O_ArticleCard all year2023 year2021">
+          <div class="A_ArticleCardImage"></div>
+          <h3 class="A_ArticleCardHeader">2023 2021</h3>
+          <p>Description</p></a
+        >
       </div>
     </div>
+
+    <label class="M_Switch">
+      <input type="checkbox" class="A_Checkbox" />
+      <span></span>
+    </label>
+
     <footerPartial></footerPartial>
   </body>
 </html>

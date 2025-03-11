@@ -2,7 +2,7 @@ console.clear()
 document.addEventListener('DOMContentLoaded', () => {
   // searchHeader()
   changeTextOnClick()
-  //   askUserName()
+  // askUserName()
   showCounter()
   showRandomWord()
 })
@@ -21,12 +21,12 @@ function changeTextOnClick() {
   const text = document.querySelector('.text')
 
   text.addEventListener('click', () => {
-    if (text.innerHTML == 'Добрый утро!') {
+    if (text.innerHTML == 'Доброе утро!') {
       text.innerHTML = 'Добрый день!'
     } else if (text.innerHTML == 'Добрый день!') {
       text.innerHTML = 'Добрый вечер!'
     } else {
-      text.innerHTML = 'Добрый утро!'
+      text.innerHTML = 'Доброе утро!'
     }
   })
 }
@@ -36,7 +36,7 @@ function askUserName() {
   const userName = prompt('Как тебя зовут?', 'Гена')
 
   if (userName == null || userName == '') {
-    userText.innerHTML = `Привет, человек без имени!`
+    userText.innerHTML = `Привет, человек-без-имени!`
   } else {
     userText.innerHTML = `Привет, ${userName}!`
   }
@@ -48,11 +48,12 @@ function showCounter() {
   let cnt = 0
 
   clickButton.addEventListener('click', () => {
+    // cnt = cnt + 1
     // cnt += 1
     cnt++
-    clickText.innerHTML = `Вы кликнули ${cnt} раз`
+    clickText.innerHTML = `Вы кликнули ${cnt} раз!`
 
-    if (cnt % 10 == 0) {
+    if (cnt % 5 == 0) {
       clickText.classList.add('red')
     } else {
       clickText.classList.remove('red')
@@ -62,22 +63,26 @@ function showCounter() {
 
 function showRandomWord() {
   const words = [
-    'happy',
-    'lonely',
-    'sad',
-    'exited',
-    'tired',
-    'loved',
-    'hungry',
-    'sleepy',
-    'fasinated'
+    'удав',
+    'кабан',
+    'кот',
+    'аксолотль',
+    'пингвин',
+    'лось',
+    'суслик',
+    'хомяк',
+    'динозавр',
+    'орёл',
+    'бизон',
+    'нарвал',
+    'сивуч',
+    'бык'
   ]
-
   const randomText = document.querySelector('.randomText')
   const randomButton = document.querySelector('.randomButton')
 
   randomButton.addEventListener('click', () => {
     let index = Math.floor(words.length * Math.random())
-    randomText.innerHTML = `Beautiful day ${words[index]}`
+    randomText.innerHTML = `Сегодня вы очаровательный ${words[index]}`
   })
 }

@@ -17,7 +17,7 @@ module.exports = {
     jsBasic: './src/js-basic/js-basic.js',
     tests: './src/tests/test1.js',
     functions: './src/javascripts/functions.js',
-    filtertags: './src/javascripts/filterTags.js'
+    filterTags: './src/javascripts/filterTags.js'
   },
   output: {
     filename: '[name].[contenthash].js',
