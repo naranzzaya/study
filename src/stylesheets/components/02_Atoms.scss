@@ -1,7 +1,7 @@
-/*
-ADC DIctionary
+/* 
+ADC Dictionary 
+_____________________________________________________________
 */
-
 .A_ADCUser {
   display: flex;
   align-items: center;
@@ -20,7 +20,6 @@ ADC DIctionary
     background-image: url('../../images/dictionary/Q_ADCUserTexting.svg');
   }
 }
-
 .A_Question {
   background-color: #1a1a1a;
   color: #79ff39;
@@ -61,6 +60,7 @@ ADC DIctionary
 .A_FlipCardImage {
   width: 100%;
 }
+
 /* мультиселект */
 .A_MultiselectCheckbox {
   position: absolute;

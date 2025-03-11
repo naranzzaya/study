@@ -1,18 +1,23 @@
+/* 
+ADC Dictionary 
+_____________________________________________________________
+*/
+
 .S_Stories {
-  /*
   display: flex;
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  */
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px 12px;
-  align-content: center;
+  /*
   max-width: 984px;
   margin: 0 auto;
+  display: grid;
+  gap: 12px 12px;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center; */
 }
+
 .S_FlipCards {
   width: 100%;
   padding: 2rem;
@@ -20,6 +25,7 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
 /* мультиселект */
 .S_Multiselect {
   width: 100%;

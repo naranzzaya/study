@@ -3,14 +3,14 @@ import Cookies from 'js-cookie'
 document.addEventListener('DOMContentLoaded', () => {
   initPopUp()
   rotateFlipCard()
-  //initSwitch()
+  // initSwitch()
   initMultiselect()
 })
 
 function initMultiselect() {
   const label = document.querySelector('.C_Chips')
   const select = document.querySelector('.M_SelectField')
-  let text = label.innerHTML
+  const text = label.innerHTML
 
   select.addEventListener('change', function () {
     let selectedOptions = this.selectedOptions
@@ -30,6 +30,7 @@ function initMultiselect() {
           label.innerHTML = text
         }
       })
+
       label.appendChild(button)
     }
   })

@@ -135,6 +135,7 @@ module.exports = {
       filename: './pages/theory.html',
       chunks: ['theory']
     }),
+
     // ADC Dictionary
     new HtmlWebpackPlugin({
       template: './src/dictionary/dictionary.html',
@@ -149,7 +150,6 @@ module.exports = {
       chunks: ['jsBasic']
     }),
 
-    // functions
     new HtmlWebpackPlugin({
       template: './src/functions.html',
       filename: './functions.html',
