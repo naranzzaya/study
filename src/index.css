@@ -14,16 +14,3 @@
 @import 'stylesheets/components/05_Collections.scss';
 @import 'stylesheets/components/06_Organisms.scss';
 @import 'stylesheets/components/07_SuperOrganisms.scss';
-
-.S_Articles {
-  padding: 2rem;
-}
-.A_ArticleHeader {
-  font-weight: bold;
-  font-size: 2rem;
-}
-.M_FilterTags {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
