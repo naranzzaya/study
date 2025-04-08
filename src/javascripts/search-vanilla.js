@@ -43,6 +43,18 @@ function initSearch() {
       searchContent(requestText)
     }
   })
+  A_SearchButton.addEventListener('click', (e) => {
+    if (e.target.classList.contains('disabled')) {
+      requestText = A_SearchInput.value
+      setSearchRequest(requestText)
+      setSearchContent(requestText)
+    }
+  })
+}
+
+function setSearchRequest(requestText) {
+  const url = window.location.href.split('?')[0]
+  window.location.href = url + '?request=' + requestText
 }
 
 function getSearchRequest() {
