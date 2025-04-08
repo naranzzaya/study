@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     content = data
 
     // createCard(content)
+    initSearch()
   })
 })
 
@@ -47,7 +48,7 @@ function initSearch() {
     if (e.target.classList.contains('disabled')) {
       requestText = A_SearchInput.value
       setSearchRequest(requestText)
-      setSearchContent(requestText)
+      searchContent(requestText)
     }
   })
 }
@@ -55,6 +56,55 @@ function initSearch() {
 function setSearchRequest(requestText) {
   const url = window.location.href.split('?')[0]
   window.location.href = url + '?request=' + requestText
+}
+
+function searchContent(requestText) {
+  const container = document.querySelector('.S_Content')
+  container.innerHTML = ''
+
+  let contentItemIds = []
+
+  content.forEach((contentItem) => {
+    const nbspRegEx = /[\u202F\u00A0]/gm
+    const punctuationRegEx = /[.,\/#!$%\^&\*;:{}=\-_`()]/gm
+
+    let { title, description, id } = contentItem
+
+    title = title.replaceAll(nbspRegEx, ' ')
+    title = title.replaceAll(nbspRegEx, '')
+
+    description = description.replaceAll(nbspRegEx, ' ')
+    description = description.replaceAll(nbspRegEx, '')
+
+    if (requestText.length >= 3) {
+      if (title.includes(requestText) || description.includes(requestText)) {
+        contentItemIds.push(id)
+      }
+    }
+  })
+
+  if (contentItemIds.length > 0) {
+    renderCardsByIds(container, contentItemIds)
+  } else {
+    renderNothingFounded(container)
+  }
+}
+
+function renderNothingFounded(container) {
+  container.innerHTML = 'Ничего не найдено :('
+}
+
+function renderCardsByIds(container, ids) {
+  ids = [...new Set(ids)]
+  console.log(ids)
+
+  ids.forEach((id) => {
+    content.forEach((item) => {
+      if (item.id == id) {
+        createCard(item)
+      }
+    })
+  })
 }
 
 function getSearchRequest() {
@@ -66,35 +116,33 @@ function getSearchRequest() {
   }
 }
 
-function createCard(contentData) {
-  contentData.forEach((card) => {
-    let { id, title, description, url, image, tags } = card
+function createCard(card) {
+  let { id, title, description, url, image, tags } = card
 
-    const contentItem = document.createElement('a')
-    contentItem.classList.add('O_ContentItem')
-    contentItem.href = url
+  const contentItem = document.createElement('a')
+  contentItem.classList.add('O_ContentItem')
+  contentItem.href = url
 
-    const contentItemCover = document.createElement('img')
-    contentItemCover.classList.add('A_ContentItemCover')
-    contentItemCover.src = image
+  const contentItemCover = document.createElement('img')
+  contentItemCover.classList.add('A_ContentItemCover')
+  contentItemCover.src = image
 
-    const contentItemTitle = document.createElement('h3')
-    contentItemTitle.classList.add('O_ContentItemTitle')
-    contentItemTitle.innerText = title
+  const contentItemTitle = document.createElement('h3')
+  contentItemTitle.classList.add('O_ContentItemTitle')
+  contentItemTitle.innerText = title
 
-    const contentItemDescription = document.createElement('p')
-    contentItemDescription.classList.add('O_ContentItemDescription')
-    contentItemDescription.innerText = description
+  const contentItemDescription = document.createElement('p')
+  contentItemDescription.classList.add('O_ContentItemDescription')
+  contentItemDescription.innerText = description
 
-    const contentItemTag = document.createElement('div')
-    contentItemTag.classList.add('A_ContentItemTag')
-    contentItemTag.innerText = tags
+  const contentItemTag = document.createElement('div')
+  contentItemTag.classList.add('A_ContentItemTag')
+  contentItemTag.innerText = tags
 
-    contentItem.appendChild(contentItemCover)
-    contentItem.appendChild(contentItemTag)
-    contentItem.appendChild(contentItemTitle)
-    contentItem.appendChild(contentItemDescription)
+  contentItem.appendChild(contentItemCover)
+  contentItem.appendChild(contentItemTag)
+  contentItem.appendChild(contentItemTitle)
+  contentItem.appendChild(contentItemDescription)
 
-    document.querySelector('.S_Content').appendChild(contentItem)
-  })
+  document.querySelector('.S_Content').appendChild(contentItem)
 }
