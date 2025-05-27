@@ -3,10 +3,28 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const SitemapPlugin = require('sitemap-webpack-plugin').default
 
 const webpack = require('webpack')
 const path = require('path')
 
+const paths = [
+  '/static-site-08-24/',
+  '/static-site-08-24/articles.html',
+  '/static-site-08-24/boardgames.html',
+  '/static-site-08-24/functions.html',
+  '/static-site-08-24/react-basics.html',
+  '/static-site-08-24/search.html',
+  '/static-site-08-24/styleguide.html',
+  '/static-site-08-24/articles/about-games.html',
+  '/static-site-08-24/articles/eclipse.html',
+  '/static-site-08-24/articles/era-konana.html',
+  '/static-site-08-24/boardgames/gloomhaven.html',
+  '/static-site-08-24/dictionary/dictionary.html',
+  '/static-site-08-24/pages/theory.html',
+  '/static-site-08-24/tests/test1.html',
+  '/static-site-08-24/js-basic/js-basic.html'
+]
 module.exports = {
   entry: {
     index: './src/index.js',
@@ -216,7 +234,9 @@ module.exports = {
         template_filename: '*',
         priority: 'replace'
       }
-    ])
+    ]),
+    // new SitemapPlugin({ base: 'https://github.github.io', paths })
+    new SitemapPlugin({ base: 'https://naranzzaya.github.io', paths })
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]
