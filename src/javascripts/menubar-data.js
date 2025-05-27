@@ -1,4 +1,4 @@
-const homeURL = 'http://localhost:8080'
+const homeURL = 'http://localhost:8080/'
 // const homeURL = 'http://hseadc.github.io/Spot/'
 
 const menu = [
